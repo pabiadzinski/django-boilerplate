@@ -2,47 +2,7 @@
 
 {% block content %}
     <div class="product-list-wrapper pt-3 pb-3">
-        <div class="container">
-            <div class="product-list-wrapper__title">
-                Популярные
-            </div>
 
-            <div class="search-table pt-2">
-                {% for item in popular_products %}
-                    {% if forloop.first %}
-                        <div class="row no-gutters">
-                    {% endif %}
-
-                {% if forloop.counter|divisibleby:6 %}</div>
-                    <div class="row no-gutters">
-                {% endif %}
-
-                {% if forloop.last %}</div>{% endif %}
-
-                {% endfor %}
-            </div>
-
-            <div class="product-list-wrapper__title pt-3">
-                Подарочные наборы
-            </div>
-
-            <div class="search-table pt-2">
-                {% for item in gifts %}
-                    {% if forloop.first %}
-                        <div class="row no-gutters">
-                    {% endif %}
-
-                {% if forloop.counter|divisibleby:6 %}
-                    </div>
-                    <div class="row no-gutters">
-                {% endif %}
-
-                {% if forloop.last %}</div>{% endif %}
-
-                {% endfor %}
-            </div>
-        </div>
     </div>
-
 
 {% endblock %}
