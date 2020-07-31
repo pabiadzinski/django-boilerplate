@@ -13,8 +13,6 @@
                         <div class="row no-gutters">
                     {% endif %}
 
-                {% include 'product/item_small.html' with item=item shop=item.shop %}
-
                 {% if forloop.counter|divisibleby:6 %}</div>
                     <div class="row no-gutters">
                 {% endif %}
@@ -33,8 +31,6 @@
                     {% if forloop.first %}
                         <div class="row no-gutters">
                     {% endif %}
-
-                {% include 'product/item_small.html' with item=item shop=item.shop %}
 
                 {% if forloop.counter|divisibleby:6 %}
                     </div>
