@@ -1,0 +1,62 @@
+.search-form__submit {
+  width: 101px;
+  height: 40px;
+  background: $search-btn-color;
+  box-shadow: 0 2px 4px 0 rgba(126, 188, 66, 0.50);
+  border-radius: 20px;
+  position: absolute;
+  top: 7px;
+  border: 0;
+  z-index: 2;
+  right: 1.5rem;
+  text-transform: uppercase;
+}
+
+.search-form__submit:hover {
+  background: #90D151;
+  box-shadow: 0 4px 8px 0 rgba(126, 188, 66, 0.50);
+  border-radius: 20px;
+}
+
+.search-form__submit-label {
+  font-family: OpenSans-Bold, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+
+.user-form {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.user-form__submit {
+  //width: 301px;
+  height: 40px;
+  background: $search-btn-color;
+  box-shadow: 0 2px 4px 0 rgba(126, 188, 66, 0.50);
+  border-radius: 20px;
+  border: 0;
+
+  text-transform:   uppercase;
+}
+
+.user-form__submit:hover {
+  background: #90D151;
+  box-shadow: 0 4px 8px 0 rgba(126, 188, 66, 0.50);
+  border-radius: 20px;
+}
+
+.user-form__submit-label {
+  font-family: OpenSans-Bold, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 600;
+}

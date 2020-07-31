@@ -1,0 +1,9 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+<script>
+    window.MEDIA_PREFIX = "{% get_media_prefix %}"
+    window.STATIC_PREFIX = "{% get_static_prefix %}"
+</script>
+
+{% render_bundle "main" "js" %}

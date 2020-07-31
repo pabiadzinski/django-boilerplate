@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+    command: make docker-run-dev
+    container_name: t_app
+    environment:
+      - DEBUG=true
+      - PYTHONUNBUFFERED=1
+      - POSTGRES_DB=app_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - SECRET_KEY=secret
+    restart: always
+    volumes:
+      - .:/app:delegated # enable hot code reload in debug mode
+    depends_on:
+      - postgres
+      - webpack
+    ports:
+      - "8000:8000"
+
+  postgres:
+    image: postgres:11
+    container_name: t_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=app_db
+    ports:
+      - 5432
+
+  webpack:
+    image: node:14-slim
+    command: npm run watch
+    restart: always
+    volumes:
+      - .:/app:delegated
+    working_dir: /app

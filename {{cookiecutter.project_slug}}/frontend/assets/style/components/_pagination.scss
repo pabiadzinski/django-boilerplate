@@ -1,0 +1,45 @@
+
+.pagination-block {
+  display: flex;
+}
+
+.pagination-block__pages {
+  //padding: 0 20px 0 50px;
+  padding: 4px 0 0 40px;
+}
+
+.pagination-block__link {
+  width: 40px;
+  height: 31px;
+  font-family: AvenirNext-Medium;
+  background-color: #F9F9F9;
+  border-radius: 2px;
+  padding: 7px 0px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #224A74;
+  letter-spacing: -0.2px;
+  text-align: center;
+  line-height: 22px;
+}
+
+.pagination-block__link.first {
+  width: 85px;
+}
+.pagination-block__link.prev {
+  width: 40px;
+}
+.pagination-block__link.next {
+  width: 40px;
+}
+
+.pagination-block__link.active {
+  font-family: AvenirNext-Medium;
+  background-color: #7EBC42;
+  font-size: 18px;
+  color: #FFFFFF !important;
+  letter-spacing: -0.2px;
+  text-align: center;
+  line-height: 22px;
+}
+

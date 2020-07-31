@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.8
+      - image: circleci/postgres:9.6.2
+      - image: circleci/node:latest
+        environment:
+          POSTGRES_USER: db_user
+          POSTGRES_DB: djanog_db
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: sudo npm i -g npm@latest && npm ci
+      - run: npm run build
+
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pipenv install
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - "venv"
+      - run:
+          name: Running tests
+          command: |
+            . venv/bin/activate
+            python3 manage.py test
+      - store_artifacts:
+          path: test-reports/
+          destination: python_app

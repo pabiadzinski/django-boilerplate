@@ -1,0 +1,6 @@
+{
+  "project_slug": "django-boilerplate",
+  "_copy_without_render": [
+    ".circleci/config.yml"
+  ]
+}

@@ -1,0 +1,42 @@
+@media screen and (max-width: 375px) {
+  .search-form__checkbox {
+    display: none;
+  }
+}
+
+.search-form__checkbox {
+  position: absolute;
+  top: 15px;
+  right: 140px;
+  z-index: 2;
+}
+
+.checkbox-input {
+  opacity: 0;
+}
+
+.checkbox-input + label {
+  position: relative;
+  padding: 0 0 0 28px;
+  cursor: pointer;
+  font-family: OpenSans-Regular, sans-serif;
+  font-size: 14px;
+  color: #224A74;
+  letter-spacing: -0.16px;
+  line-height: 20px;
+}
+
+.checkbox-input + label:before {
+  background-image: url($img-directory + "/icons/small/unchecked.svg");
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-input:checked + label:before {
+  background-image: url($img-directory + "/icons/small/check.svg");
+  background-size: 20px;
+}

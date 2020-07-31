@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="profile__form">
+            {{ form.name }}
+        </div>
+
+        <div class="form-row">
+            {% if user.id == profile.id %}
+                <a href="{% url 'edit_profile' %}" class="btn btn-danger">Edit</a>
+            {% endif %}
+            <a href="{% url 'signout' %}" class="btn btn-primary">Sign Out</a>
+        </div>
+    </div>
+{% endblock %}

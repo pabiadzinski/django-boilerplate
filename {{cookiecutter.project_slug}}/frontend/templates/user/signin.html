@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container pt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="user-form p-4">
+                    <div class="card-body">Вход</div>
+                    <div class="card-body">
+
+                        <form class="form-horizontal" method="post">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="name" class="cols-sm-2 control-label">E-mail</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <input type="text"
+                                               class="form-control"
+                                               name="email" id="email"
+                                               placeholder=""/>
+                                        {% for error in form.email.errors %}
+                                            <li><strong>{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name" class="cols-sm-2 control-label">Пароль</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" autocomplete="off" name="password"
+                                               id="id_password"
+                                               placeholder=""/>
+                                        {% for error in form.password.errors %}
+                                            <li><strong>{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn-block user-form__submit" type="submit">
+                                    <span class="user-form__submit-label">Войти</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card-body text-center" style="background: #FFFFFF">
+                    <a href="/signup">Регистрация</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#    <div class="container">#}
+    {#		<div class="row">#}
+    {#			<div class="panel panel-primary">#}
+    {#				<div class="panel-body">#}
+    {#					<form method="POST" action="#" role="form">#}
+    {#						<div class="form-group">#}
+    {#							<h2>Create account</h2>#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<label class="control-label" for="signupName">Your name</label>#}
+    {#							<input id="signupName" type="text" maxlength="50" class="form-control">#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<label class="control-label" for="signupEmail">Email</label>#}
+    {#							<input id="signupEmail" type="email" maxlength="50" class="form-control">#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<label class="control-label" for="signupEmailagain">Email again</label>#}
+    {#							<input id="signupEmailagain" type="email" maxlength="50" class="form-control">#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<label class="control-label" for="signupPassword">Password</label>#}
+    {#							<input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<label class="control-label" for="signupPasswordagain">Password again</label>#}
+    {#							<input id="signupPasswordagain" type="password" maxlength="25" class="form-control">#}
+    {#						</div>#}
+    {#						<div class="form-group">#}
+    {#							<button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your account</button>#}
+    {#						</div>#}
+    {#						<p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>#}
+    {#						<hr>#}
+    {#						<p></p>Already have an account? <a href="#">Sign in</a></p>#}
+    {#					</form>#}
+    {#				</div>#}
+    {#			</div>#}
+    {#		</div>#}
+    {#	</div>#}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label for="inputTitle">Name</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="errors-block">
+                                <div class="error-message">{{ form.name.errors.0|escape }}</div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
